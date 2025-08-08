@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - TastyBites</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="navbar-brand">🍕 TastyBites</a>
+            
+            <ul class="nav-links">
+                <li class="dropdown" data-page="home">
+                    <a href="#" class="dropbtn">Home</a>
+                    <div class="dropdown-content">
+                        <a href="index.html">Home Style 1</a>
+                        <a href="index2.html">Home Style 2</a>
+                    </div>
+                </li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="dropdown" data-page="dashboard">
+                    <a href="#" class="dropbtn">Dashboard</a>
+                    <div class="dropdown-content">
+                        <a href="user-dashboard.html">User Dashboard</a>
+                        <a href="admin-dashboard.html">Admin Dashboard</a>
+                    </div>
+                </li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+            
+            <button class="mobile-menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero" style="background: linear-gradient(135deg, rgba(255, 107, 53, 0.9) 0%, rgba(139, 69, 19, 0.9) 100%), url('https://images.pexels.com/photos/4253302/pexels-photo-4253302.jpeg') center/cover; padding: 2rem;">
+            <div class="hero-content">
+                <h1>Place Your Order</h1>
+                <p>Ready to enjoy delicious food? Fill out the form below and we'll have your meal delivered fresh and hot!</p>
+            </div>
+        </section>
+
+        <!-- Order Form Section -->
+        <section class="section">
+            <div class="section-content">
+                <div class="form-container">
+                    <h2 style="text-align: center; color: var(--secondary-color); margin-bottom: 2rem;">Order Details</h2>
+                    
+                    <form id="orderForm">
+                        <!-- Customer Information -->
+                        <fieldset style="border: 2px solid var(--accent-color); border-radius: var(--border-radius); padding: 2rem; margin-bottom: 2rem;">
+                            <legend style="color: var(--primary-color); font-weight: bold; padding: 0 1rem;">Customer Information</legend>
+                            
+                            <div class="form-group">
+                                <label for="customerName">Full Name *</label>
+                                <input type="text" id="customerName" name="customerName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </fieldset>
+
+                        <!-- Delivery Information -->
+                        <fieldset style="border: 2px solid var(--accent-color); border-radius: var(--border-radius); padding: 2rem; margin-bottom: 2rem;">
+                            <legend style="color: var(--primary-color); font-weight: bold; padding: 0 1rem;">Delivery Information</legend>
+                            
+                            <div class="form-group">
+                                <label for="address">Delivery Address *</label>
+                                <textarea id="address" name="address" rows="3" required placeholder="Street address, apartment number, city, state, zip code"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="deliveryTime">Preferred Delivery Time</label>
+                                <select id="deliveryTime" name="deliveryTime">
+                                    <option value="asap">As soon as possible</option>
+                                    <option value="30min">In 30 minutes</option>
+                                    <option value="1hour">In 1 hour</option>
+                                    <option value="2hours">In 2 hours</option>
+                                    <option value="custom">Custom time</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="deliveryNotes">Delivery Instructions</label>
+                                <textarea id="deliveryNotes" name="deliveryNotes" rows="2" placeholder="Special instructions for delivery (e.g., gate code, apartment floor, etc.)"></textarea>
+                            </div>
+                        </fieldset>
+
+                        <!-- Order Items -->
+                        <fieldset style="border: 2px solid var(--accent-color); border-radius: var(--border-radius); padding: 2rem; margin-bottom: 2rem;">
+                            <legend style="color: var(--primary-color); font-weight: bold; padding: 0 1rem;">Menu Items</legend>
+                            
+                            <div class="form-group">
+                                <label for="mainDish">Main Dish *</label>
+                                <select id="mainDish" name="mainDish" required>
+                                    <option value="">Select a main dish</option>
+                                    <option value="margherita-pizza">Margherita Pizza - $18.99</option>
+                                    <option value="grilled-salmon">Grilled Salmon - $26.99</option>
+                                    <option value="beef-tenderloin">Beef Tenderloin - $34.99</option>
+                                    <option value="pasta-carbonara">Pasta Carbonara - $19.99</option>
+                                    <option value="bbq-ribs">BBQ Ribs - $24.99</option>
+                                    <option value="classic-burger">Classic Cheeseburger - $16.99</option>
+                                    <option value="chicken-club">Chicken Club Sandwich - $15.99</option>
+                                    <option value="veggie-burger">Veggie Burger - $14.99</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="appetizer">Appetizer</label>
+                                <select id="appetizer" name="appetizer">
+                                    <option value="">Select an appetizer (optional)</option>
+                                    <option value="caesar-salad">Caesar Salad - $12.99</option>
+                                    <option value="buffalo-wings">Buffalo Wings - $14.99</option>
+                                    <option value="bruschetta">Bruschetta Trio - $11.99</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="dessert">Dessert</label>
+                                <select id="dessert" name="dessert">
+                                    <option value="">Select a dessert (optional)</option>
+                                    <option value="lava-cake">Chocolate Lava Cake - $8.99</option>
+                                    <option value="tiramisu">Tiramisu - $7.99</option>
+                                    <option value="cheesecake">New York Cheesecake - $6.99</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="beverage">Beverage</label>
+                                <select id="beverage" name="beverage">
+                                    <option value="">Select a beverage (optional)</option>
+                                    <option value="orange-juice">Fresh Orange Juice - $4.99</option>
+                                    <option value="craft-soda">Craft Soda - $3.99</option>
+                                    <option value="iced-coffee">Iced Coffee - $4.99</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="quantity">Quantity</label>
+                                <input type="number" id="quantity" name="quantity" min="1" max="10" value="1">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="specialRequests">Special Requests</label>
+                                <textarea id="specialRequests" name="specialRequests" rows="3" placeholder="Any special dietary requirements or cooking preferences"></textarea>
+                            </div>
+                        </fieldset>
+
+                        <!-- Payment Information -->
+                        <fieldset style="border: 2px solid var(--accent-color); border-radius: var(--border-radius); padding: 2rem; margin-bottom: 2rem;">
+                            <legend style="color: var(--primary-color); font-weight: bold; padding: 0 1rem;">Payment Method</legend>
+                            
+                            <div class="form-group">
+                                <label for="paymentMethod">Payment Method *</label>
+                                <select id="paymentMethod" name="paymentMethod" required>
+                                    <option value="">Select payment method</option>
+                                    <option value="cash">Cash on Delivery</option>
+                                    <option value="card">Credit/Debit Card</option>
+                                    <option value="paypal">PayPal</option>
+                                    <option value="apple-pay">Apple Pay</option>
+                                    <option value="google-pay">Google Pay</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" name="terms" required style="margin-right: 0.5rem;">
+                                    I agree to the <a href="#terms" style="color: var(--primary-color);">Terms of Service</a> and <a href="#privacy" style="color: var(--primary-color);">Privacy Policy</a>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <div style="text-align: center;">
+                            <button type="submit" class="btn" style="font-size: 1.2rem; padding: 1rem 3rem;">Place Order</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Order Summary -->
+                <div id="orderSummary" class="order-summary" style="margin-top: 2rem;">
+                    <h3 style="color: var(--secondary-color); text-align: center; margin-bottom: 1rem;">Order Summary</h3>
+                    <div id="summaryContent">
+                        <p>Select your items to see the order summary</p>
+                    </div>
+                    <div class="order-total" id="orderTotal">
+                        Total: $0.00
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Order Section -->
+        <section class="section" style="background-color: var(--accent-color);">
+            <div class="section-content">
+                <h2>Popular Combos - Order Quickly!</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>🍕 Pizza Combo</h3>
+                            <p>Margherita Pizza + Caesar Salad + Craft Soda</p>
+                            <div class="price">$24.97 <span style="text-decoration: line-through; color: #999;">$27.97</span></div>
+                            <button class="btn" onclick="quickOrder('pizza-combo')">Quick Order</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>🍔 Burger Combo</h3>
+                            <p>Classic Cheeseburger + Buffalo Wings + Iced Coffee</p>
+                            <div class="price">$32.97 <span style="text-decoration: line-through; color: #999;">$36.97</span></div>
+                            <button class="btn" onclick="quickOrder('burger-combo')">Quick Order</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>🥘 Gourmet Combo</h3>
+                            <p>Grilled Salmon + Bruschetta + Tiramisu + Orange Juice</p>
+                            <div class="price">$46.96 <span style="text-decoration: line-through; color: #999;">$52.96</span></div>
+                            <button class="btn" onclick="quickOrder('gourmet-combo')">Quick Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TastyBites</h3>
+                <p>Delivering happiness, one meal at a time. Fresh ingredients, expert preparation, lightning-fast delivery.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="menu.html">Our Menu</a>
+                <a href="order.html">Place Order</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="login.html">Login</a>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="contact.html">Help & Support</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📞 (555) 123-FOOD</p>
+                <p>📧 info@tastybites.com</p>
+                <p>📍 123 Foodie Street, Flavor Town</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TastyBites. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Quick order functionality
+        function quickOrder(combo) {
+            const combos = {
+                'pizza-combo': {
+                    mainDish: 'margherita-pizza',
+                    appetizer: 'caesar-salad',
+                    beverage: 'craft-soda',
+                    total: 24.97
+                },
+                'burger-combo': {
+                    mainDish: 'classic-burger',
+                    appetizer: 'buffalo-wings',
+                    beverage: 'iced-coffee',
+                    total: 32.97
+                },
+                'gourmet-combo': {
+                    mainDish: 'grilled-salmon',
+                    appetizer: 'bruschetta',
+                    dessert: 'tiramisu',
+                    beverage: 'orange-juice',
+                    total: 46.96
+                }
+            };
+
+            const selectedCombo = combos[combo];
+            if (selectedCombo) {
+                // Fill the form
+                document.getElementById('mainDish').value = selectedCombo.mainDish;
+                if (selectedCombo.appetizer) document.getElementById('appetizer').value = selectedCombo.appetizer;
+                if (selectedCombo.dessert) document.getElementById('dessert').value = selectedCombo.dessert;
+                if (selectedCombo.beverage) document.getElementById('beverage').value = selectedCombo.beverage;
+                
+                // Scroll to form
+                document.getElementById('orderForm').scrollIntoView({ behavior: 'smooth' });
+                
+                // Show success message
+                if (window.RestaurantApp) {
+                    // Use the notification system if available
+                    const app = new RestaurantApp();
+                    app.showNotification(`${combo.replace('-', ' ').toUpperCase()} added to your order!`, 'success');
+                }
+            }
+        }
+
+        // Calculate order total
+        function calculateTotal() {
+            const prices = {
+                'margherita-pizza': 18.99,
+                'grilled-salmon': 26.99,
+                'beef-tenderloin': 34.99,
+                'pasta-carbonara': 19.99,
+                'bbq-ribs': 24.99,
+                'classic-burger': 16.99,
+                'chicken-club': 15.99,
+                'veggie-burger': 14.99,
+                'caesar-salad': 12.99,
+                'buffalo-wings': 14.99,
+                'bruschetta': 11.99,
+                'lava-cake': 8.99,
+                'tiramisu': 7.99,
+                'cheesecake': 6.99,
+                'orange-juice': 4.99,
+                'craft-soda': 3.99,
+                'iced-coffee': 4.99
+            };
+
+            let total = 0;
+            const quantity = parseInt(document.getElementById('quantity').value) || 1;
+            
+            const mainDish = document.getElementById('mainDish').value;
+            const appetizer = document.getElementById('appetizer').value;
+            const dessert = document.getElementById('dessert').value;
+            const beverage = document.getElementById('beverage').value;
+            
+            if (mainDish && prices[mainDish]) total += prices[mainDish];
+            if (appetizer && prices[appetizer]) total += prices[appetizer];
+            if (dessert && prices[dessert]) total += prices[dessert];
+            if (beverage && prices[beverage]) total += prices[beverage];
+            
+            total *= quantity;
+            
+            document.getElementById('orderTotal').textContent = `Total: $${total.toFixed(2)}`;
+            
+            // Update summary
+            updateOrderSummary();
+        }
+
+        function updateOrderSummary() {
+            const summaryContent = document.getElementById('summaryContent');
+            const items = [];
+            
+            const mainDish = document.getElementById('mainDish');
+            const appetizer = document.getElementById('appetizer');
+            const dessert = document.getElementById('dessert');
+            const beverage = document.getElementById('beverage');
+            const quantity = document.getElementById('quantity').value;
+            
+            if (mainDish.value) items.push(mainDish.options[mainDish.selectedIndex].text);
+            if (appetizer.value) items.push(appetizer.options[appetizer.selectedIndex].text);
+            if (dessert.value) items.push(dessert.options[dessert.selectedIndex].text);
+            if (beverage.value) items.push(beverage.options[beverage.selectedIndex].text);
+            
+            if (items.length > 0) {
+                summaryContent.innerHTML = `
+                    <p><strong>Quantity:</strong> ${quantity}</p>
+                    <p><strong>Items:</strong></p>
+                    <ul>${items.map(item => `<li>${item}</li>`).join('')}</ul>
+                `;
+            } else {
+                summaryContent.innerHTML = '<p>Select your items to see the order summary</p>';
+            }
+        }
+
+        // Add event listeners for real-time calculation
+        document.addEventListener('DOMContentLoaded', function() {
+            const selects = ['mainDish', 'appetizer', 'dessert', 'beverage', 'quantity'];
+            selects.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.addEventListener('change', calculateTotal);
+                }
+            });
+        });
+    </script>
+    <script src="main.js"></script>
+    <script src="rtl-toggle.js"></script>
+</body>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - TastyBites</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="navbar-brand">🍕 TastyBites Admin</a>
+            
+            <ul class="nav-links">
+                <li class="dropdown" data-page="home">
+                    <a href="#" class="dropbtn">Home</a>
+                    <div class="dropdown-content">
+                        <a href="index.html">Home Style 1</a>
+                        <a href="index2.html">Home Style 2</a>
+                    </div>
+                </li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="dropdown" data-page="dashboard">
+                    <a href="#" class="dropbtn">Dashboard</a>
+                    <div class="dropdown-content">
+                        <a href="user-dashboard.html">User Dashboard</a>
+                        <a href="admin-dashboard.html">Admin Dashboard</a>
+                    </div>
+                </li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+            
+            <button class="mobile-menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Admin Welcome Section -->
+        <section class="hero" style="background: linear-gradient(135deg, var(--secondary-color), var(--primary-color)); padding: 2rem;">
+            <div class="hero-content">
+                <h1>Admin Dashboard</h1>
+                <p>Manage orders, track performance, and oversee restaurant operations from your central control panel.</p>
+            </div>
+        </section>
+
+        <!-- Key Metrics -->
+        <section class="section">
+            <div class="section-content">
+                <h2>Today's Overview</h2>
+                <div class="dashboard">
+                    <div class="dashboard-card">
+                        <h3>Active Orders</h3>
+                        <div class="number">23</div>
+                        <p>Currently processing</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3>Daily Revenue</h3>
+                        <div class="number">$2,847</div>
+                        <p>+12% from yesterday</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3>Average Prep Time</h3>
+                        <div class="number">18m</div>
+                        <p>Within target range</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3>Customer Satisfaction</h3>
+                        <div class="number">4.8★</div>
+                        <p>Based on 47 reviews</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Active Orders Management -->
+        <section class="section" style="background-color: var(--accent-color);">
+            <div class="section-content">
+                <h2>Active Orders Queue</h2>
+                <div style="background: white; border-radius: var(--border-radius); box-shadow: var(--shadow); overflow: hidden;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead style="background: var(--primary-color); color: white;">
+                            <tr>
+                                <th style="padding: 1rem; text-align: left;">Order ID</th>
+                                <th style="padding: 1rem; text-align: left;">Customer</th>
+                                <th style="padding: 1rem; text-align: left;">Items</th>
+                                <th style="padding: 1rem; text-align: left;">Status</th>
+                                <th style="padding: 1rem; text-align: left;">Time</th>
+                                <th style="padding: 1rem; text-align: left;">Total</th>
+                                <th style="padding: 1rem; text-align: left;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 1rem;">#TB-2025-001</td>
+                                <td style="padding: 1rem;">John Smith</td>
+                                <td style="padding: 1rem;">Pizza, Caesar Salad</td>
+                                <td style="padding: 1rem;"><span style="color: orange;">🚚 Out for Delivery</span></td>
+                                <td style="padding: 1rem;">22m ago</td>
+                                <td style="padding: 1rem;">$31.98</td>
+                                <td style="padding: 1rem;"><button class="btn" onclick="updateOrderStatus('TB-2025-001')">Update</button></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 1rem;">#TB-2025-002</td>
+                                <td style="padding: 1rem;">Emma Davis</td>
+                                <td style="padding: 1rem;">Beef Tenderloin, Tiramisu</td>
+                                <td style="padding: 1rem;"><span style="color: blue;">👨‍🍳 Preparing</span></td>
+                                <td style="padding: 1rem;">8m ago</td>
+                                <td style="padding: 1rem;">$42.98</td>
+                                <td style="padding: 1rem;"><button class="btn" onclick="updateOrderStatus('TB-2025-002')">Update</button></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 1rem;">#TB-2025-003</td>
+                                <td style="padding: 1rem;">Mike Johnson</td>
+                                <td style="padding: 1rem;">BBQ Ribs, Iced Coffee</td>
+                                <td style="padding: 1rem;"><span style="color: red;">🔔 New Order</span></td>
+                                <td style="padding: 1rem;">2m ago</td>
+                                <td style="padding: 1rem;">$29.98</td>
+                                <td style="padding: 1rem;"><button class="btn" onclick="acceptOrder('TB-2025-003')">Accept</button></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 1rem;">#TB-2025-004</td>
+                                <td style="padding: 1rem;">Lisa Wang</td>
+                                <td style="padding: 1rem;">Veggie Burger, Orange Juice</td>
+                                <td style="padding: 1rem;"><span style="color: blue;">👨‍🍳 Preparing</span></td>
+                                <td style="padding: 1rem;">15m ago</td>
+                                <td style="padding: 1rem;">$19.98</td>
+                                <td style="padding: 1rem;"><button class="btn" onclick="updateOrderStatus('TB-2025-004')">Update</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analytics Section -->
+        <section class="section">
+            <div class="section-content">
+                <h2>Performance Analytics</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>📊 Sales Analytics</h3>
+                            <p><strong>This Week:</strong> $18,547 (+15%)</p>
+                            <p><strong>This Month:</strong> $72,891 (+8%)</p>
+                            <p><strong>Top Item:</strong> Margherita Pizza (127 orders)</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>⏱️ Order Times</h3>
+                            <p><strong>Avg Prep Time:</strong> 18 minutes</p>
+                            <p><strong>Avg Delivery:</strong> 24 minutes</p>
+                            <p><strong>Target Met:</strong> 94% of orders</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>👥 Customer Data</h3>
+                            <p><strong>Total Customers:</strong> 2,847</p>
+                            <p><strong>New This Week:</strong> 156</p>
+                            <p><strong>Returning Rate:</strong> 78%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Staff Management -->
+        <section class="section" style="background-color: var(--accent-color);">
+            <div class="section-content">
+                <h2>Staff & Kitchen Status</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>👨‍🍳 Kitchen Staff</h3>
+                            <p><strong>On Duty:</strong> 8 staff members</p>
+                            <p><strong>Head Chef:</strong> Marco Rossi ✅</p>
+                            <p><strong>Line Cooks:</strong> 4 active</p>
+                            <p><strong>Prep Staff:</strong> 3 active</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>🚚 Delivery Team</h3>
+                            <p><strong>Available Drivers:</strong> 6</p>
+                            <p><strong>On Delivery:</strong> 4</p>
+                            <p><strong>Avg Rating:</strong> 4.9★</p>
+                            <p><strong>On-Time Rate:</strong> 96%</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>📦 Inventory Status</h3>
+                            <p><strong>Stock Level:</strong> Good 🟢</p>
+                            <p><strong>Low Items:</strong> Tomatoes (12 left)</p>
+                            <p><strong>Restock Needed:</strong> 3 items</p>
+                            <button class="btn btn-secondary">Manage Inventory</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Reviews -->
+        <section class="section">
+            <div class="section-content">
+                <h2>Recent Customer Reviews</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>⭐⭐⭐⭐⭐ Sarah Thompson</h3>
+                            <p>"Amazing pizza! Delivered hot and fresh in just 20 minutes. The new driver Mike was very polite and professional."</p>
+                            <small style="color: #666;">2 hours ago - Order #TB-2024-089</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>⭐⭐⭐⭐⭐ David Chen</h3>
+                            <p>"Best carbonara I've had in years! Perfect cooking and the portion size was generous. Will definitely order again."</p>
+                            <small style="color: #666;">4 hours ago - Order #TB-2024-088</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>⭐⭐⭐⭐ Jessica Brown</h3>
+                            <p>"Great food quality as always. Only minor issue was the delivery took a bit longer than expected during the lunch rush."</p>
+                            <small style="color: #666;">6 hours ago - Order #TB-2024-087</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Actions -->
+        <section class="section" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
+            <div class="section-content">
+                <h2 style="color: white; text-align: center;">Quick Admin Actions</h2>
+                <div class="dashboard" style="margin-top: 2rem;">
+                    <div class="dashboard-card" style="cursor: pointer;" onclick="manageMenu()">
+                        <h3>🍽️</h3>
+                        <div style="font-size: 1.2rem;">Menu Management</div>
+                        <p>Add, edit, or remove menu items</p>
+                    </div>
+                    <div class="dashboard-card" style="cursor: pointer;" onclick="viewReports()">
+                        <h3>📈</h3>
+                        <div style="font-size: 1.2rem;">Generate Reports</div>
+                        <p>Sales, performance, and analytics</p>
+                    </div>
+                    <div class="dashboard-card" style="cursor: pointer;" onclick="managePromotions()">
+                        <h3>🎯</h3>
+                        <div style="font-size: 1.2rem;">Promotions</div>
+                        <p>Create and manage discounts</p>
+                    </div>
+                    <div class="dashboard-card" style="cursor: pointer;" onclick="systemSettings()">
+                        <h3>⚙️</h3>
+                        <div style="font-size: 1.2rem;">System Settings</div>
+                        <p>Configure restaurant settings</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TastyBites Admin</h3>
+                <p>Restaurant management system for efficient operations and customer satisfaction.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Admin Tools</h3>
+                <a href="#orders">Order Management</a>
+                <a href="#analytics">Analytics</a>
+                <a href="#inventory">Inventory</a>
+                <a href="#staff">Staff Management</a>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <a href="#help">Admin Help</a>
+                <a href="#training">Staff Training</a>
+                <a href="contact.html">Technical Support</a>
+                <a href="#documentation">Documentation</a>
+            </div>
+            <div class="footer-section">
+                <h3>System Info</h3>
+                <p>🟢 System Status: Online</p>
+                <p>💾 Database: Connected</p>
+                <p>🔄 Last Update: 2 min ago</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TastyBites Admin Panel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize admin dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            const userEmail = sessionStorage.getItem('userEmail');
+            const userType = sessionStorage.getItem('userType');
+            
+            if (!userEmail || userType !== 'admin') {
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            // Start real-time updates
+            startRealTimeUpdates();
+        });
+
+        // Order management functions
+        function acceptOrder(orderId) {
+            if (confirm(`Accept order ${orderId}?`)) {
+                updateOrderStatus(orderId, 'Accepted - Preparing');
+                showNotification(`Order ${orderId} accepted and sent to kitchen`, 'success');
+            }
+        }
+
+        function updateOrderStatus(orderId, newStatus = null) {
+            const statuses = ['Preparing', 'Ready for Pickup', 'Out for Delivery', 'Delivered'];
+            
+            if (!newStatus) {
+                const currentStatus = prompt(`Update status for ${orderId}:\n\n1. Preparing\n2. Ready for Pickup\n3. Out for Delivery\n4. Delivered\n\nEnter number (1-4):`);
+                
+                if (currentStatus && currentStatus >= 1 && currentStatus <= 4) {
+                    newStatus = statuses[currentStatus - 1];
+                }
+            }
+            
+            if (newStatus) {
+                showNotification(`Order ${orderId} status updated to: ${newStatus}`, 'success');
+                // In a real app, this would update the database
+            }
+        }
+
+        // Admin action functions
+        function manageMenu() {
+            alert('Menu Management System\n\nThis would open the full menu management interface where you can:\n\n• Add new dishes\n• Edit existing items\n• Update prices\n• Manage ingredients\n• Set availability\n• Upload photos\n• Organize categories');
+        }
+
+        function viewReports() {
+            alert('Reports & Analytics\n\nGenerate comprehensive reports:\n\n• Daily/Weekly/Monthly sales\n• Popular items analysis\n• Customer demographics\n• Delivery performance\n• Staff productivity\n• Inventory turnover\n• Financial summaries');
+        }
+
+        function managePromotions() {
+            alert('Promotions Management\n\nCreate and manage promotional campaigns:\n\n• Discount codes\n• Happy hour specials\n• Buy-one-get-one offers\n• Loyalty program rewards\n• Seasonal promotions\n• Customer segments\n• Scheduled campaigns');
+        }
+
+        function systemSettings() {
+            alert('System Settings\n\nConfigure restaurant operations:\n\n• Operating hours\n• Delivery zones\n• Pricing rules\n• Tax settings\n• Payment methods\n• Notification preferences\n• Staff permissions');
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to log out of the admin panel?')) {
+                sessionStorage.clear();
+                window.location.href = 'login.html';
+            }
+        }
+
+        // Real-time updates simulation
+        function startRealTimeUpdates() {
+            setInterval(() => {
+                // Simulate new orders and updates
+                if (Math.random() > 0.97) {
+                    const orderNumber = 'TB-2025-' + String(Math.floor(Math.random() * 1000)).padStart(3, '0');
+                    showNotification(`🔔 New order received: ${orderNumber}`, 'info');
+                    
+                    // Play notification sound (in a real app)
+                    // playNotificationSound();
+                }
+                
+                // Simulate order status changes
+                if (Math.random() > 0.95) {
+                    const statuses = ['ready for pickup', 'out for delivery', 'delivered'];
+                    const status = statuses[Math.floor(Math.random() * statuses.length)];
+                    showNotification(`Order status updated: Order is ${status}`, 'success');
+                }
+            }, 3000);
+        }
+
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#F44336' : '#2196F3'};
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 8px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+                z-index: 10000;
+                max-width: 300px;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 5000);
+        }
+
+        // Add animation styles
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+    <script src="main.js"></script>
+    <script src="rtl-toggle.js"></script>
+</body>
+</html>

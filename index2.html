@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TastyBites - Gourmet Dining Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="navbar-brand">🍽️ TastyBites Premium</a>
+            
+            <ul class="nav-links">
+                <li class="dropdown" data-page="home">
+                    <a href="#" class="dropbtn">Home</a>
+                    <div class="dropdown-content">
+                        <a href="index.html">Home Style 1</a>
+                        <a href="index2.html">Home Style 2</a>
+                    </div>
+                </li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="dropdown" data-page="dashboard">
+                    <a href="#" class="dropbtn">Dashboard</a>
+                    <div class="dropdown-content">
+                        <a href="user-dashboard.html">User Dashboard</a>
+                        <a href="admin-dashboard.html">Admin Dashboard</a>
+                    </div>
+                </li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+            
+            <button class="mobile-menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero" style="background: linear-gradient(135deg, rgba(139, 69, 19, 0.9) 0%, rgba(255, 107, 53, 0.9) 100%), url('https://images.pexels.com/photos/1581384/pexels-photo-1581384.jpeg') center/cover;">
+            <div class="hero-content">
+                <h1>Gourmet Dining at Your Doorstep</h1>
+                <p>Elevate your dining experience with our premium selection of artisanal dishes, crafted by award-winning chefs using the finest ingredients.</p>
+                <a href="menu.html" class="cta-button">Discover Premium Menu</a>
+            </div>
+        </section>
+
+        <!-- Premium Services Section -->
+        <section class="section">
+            <div class="section-content">
+                <h2>Premium Services</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <img src="https://images.pexels.com/photos/1565982/pexels-photo-1565982.jpeg" alt="Fine Dining">
+                        <div class="card-content">
+                            <h3>🥂 Fine Dining Experience</h3>
+                            <p>Indulge in restaurant-quality fine dining from the comfort of your home. Each dish is meticulously prepared and beautifully presented.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.pexels.com/photos/1058277/pexels-photo-1058277.jpeg" alt="Personal Chef">
+                        <div class="card-content">
+                            <h3>👩‍🍳 Personal Chef Service</h3>
+                            <p>Book a personal chef for special occasions. Our culinary experts will prepare a customized menu tailored to your preferences.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg" alt="Wine Pairing">
+                        <div class="card-content">
+                            <h3>🍷 Wine Pairing</h3>
+                            <p>Enhance your meal with our expert wine pairing recommendations. Each dish comes with suggested wine selections from our premium collection.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chef's Specials Section -->
+        <section class="section" style="background-color: var(--accent-color);">
+            <div class="section-content">
+                <h2>Chef's Premium Selection</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <img src="https://images.pexels.com/photos/1438672/pexels-photo-1438672.jpeg" alt="Wagyu Steak">
+                        <div class="card-content">
+                            <h3>Premium Wagyu Steak</h3>
+                            <p>Grade A5 Wagyu beef, perfectly grilled and served with truffle mashed potatoes and seasonal vegetables.</p>
+                            <div class="price">$89.99</div>
+                            <a href="order.html" class="btn">Order Now</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.pexels.com/photos/718742/pexels-photo-718742.jpeg" alt="Lobster Thermidor">
+                        <div class="card-content">
+                            <h3>Lobster Thermidor</h3>
+                            <p>Fresh Maine lobster in a rich cognac cream sauce, gratinated with premium Gruyère cheese.</p>
+                            <div class="price">$76.99</div>
+                            <a href="order.html" class="btn">Order Now</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.pexels.com/photos/725990/pexels-photo-725990.jpeg" alt="Truffle Risotto">
+                        <div class="card-content">
+                            <h3>Black Truffle Risotto</h3>
+                            <p>Creamy Arborio rice with aged Parmesan, finished with shaved black truffles and fresh herbs.</p>
+                            <div class="price">$54.99</div>
+                            <a href="order.html" class="btn">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards Section -->
+        <section class="section">
+            <div class="section-content">
+                <h2>Recognition & Awards</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>🏆 Best Food Delivery 2024</h3>
+                            <p>Awarded by the National Restaurant Association for excellence in food delivery service and customer satisfaction.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>⭐ Michelin Recommended</h3>
+                            <p>Our head chef and signature dishes have been recognized by the prestigious Michelin Guide for culinary excellence.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>🥇 Sustainability Award</h3>
+                            <p>Committed to sustainable sourcing and eco-friendly packaging, recognized by the Environmental Food Initiative.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscription Plans Section -->
+        <section class="section" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
+            <div class="section-content">
+                <h2 style="color: white;">Premium Subscription Plans</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Silver Plan</h3>
+                            <p>3 gourmet meals per week</p>
+                            <div class="price">$89.99/week</div>
+                            <a href="order.html" class="btn">Subscribe</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Gold Plan</h3>
+                            <p>5 gourmet meals per week + wine pairing</p>
+                            <div class="price">$149.99/week</div>
+                            <a href="order.html" class="btn">Subscribe</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Platinum Plan</h3>
+                            <p>7 gourmet meals + personal chef consultation</p>
+                            <div class="price">$199.99/week</div>
+                            <a href="order.html" class="btn">Subscribe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TastyBites Premium</h3>
+                <p>Elevating your dining experience with gourmet cuisine and exceptional service.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Premium Services</h3>
+                <a href="menu.html">Premium Menu</a>
+                <a href="#chef">Personal Chef</a>
+                <a href="#catering">Catering</a>
+                <a href="#events">Private Events</a>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="contact.html">Concierge Support</a>
+                <a href="#membership">Membership Benefits</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📞 (555) 123-CHEF</p>
+                <p>📧 premium@tastybites.com</p>
+                <p>📍 456 Gourmet Avenue, Culinary District</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TastyBites Premium. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="rtl-toggle.js"></script>
+</body>
+</html>

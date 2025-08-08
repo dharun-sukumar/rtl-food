@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - TastyBites</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="navbar-brand">🍕 TastyBites</a>
+            
+            <ul class="nav-links">
+                <li class="dropdown" data-page="home">
+                    <a href="#" class="dropbtn">Home</a>
+                    <div class="dropdown-content">
+                        <a href="index.html">Home Style 1</a>
+                        <a href="index2.html">Home Style 2</a>
+                    </div>
+                </li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="dropdown" data-page="dashboard">
+                    <a href="#" class="dropbtn">Dashboard</a>
+                    <div class="dropdown-content">
+                        <a href="user-dashboard.html">User Dashboard</a>
+                        <a href="admin-dashboard.html">Admin Dashboard</a>
+                    </div>
+                </li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+            
+            <button class="mobile-menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero" style="background: linear-gradient(135deg, rgba(255, 107, 53, 0.9) 0%, rgba(139, 69, 19, 0.9) 100%), url('https://images.pexels.com/photos/7176325/pexels-photo-7176325.jpeg') center/cover; padding: 2rem;">
+            <div class="hero-content">
+                <h1>Contact Us</h1>
+                <p>We'd love to hear from you! Get in touch with us for any questions, feedback, or support.</p>
+            </div>
+        </section>
+
+        <!-- Contact Information Section -->
+        <section class="section">
+            <div class="section-content">
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>📞 Phone</h3>
+                            <p><strong>Customer Service:</strong><br>(555) 123-FOOD</p>
+                            <p><strong>Hours:</strong><br>Mon-Thu: 11:00 AM - 11:00 PM<br>Fri-Sun: 11:00 AM - 12:00 AM</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>📧 Email</h3>
+                            <p><strong>General Inquiries:</strong><br>info@tastybites.com</p>
+                            <p><strong>Customer Support:</strong><br>support@tastybites.com</p>
+                            <p><strong>Business Partnerships:</strong><br>partnerships@tastybites.com</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>📍 Location</h3>
+                            <p><strong>Main Restaurant:</strong><br>123 Foodie Street<br>Flavor Town, FT 12345</p>
+                            <p><strong>Delivery Hub:</strong><br>456 Quick Lane<br>Fast City, FC 67890</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="section" style="background-color: var(--accent-color);">
+            <div class="section-content">
+                <div class="form-container">
+                    <h2 style="text-align: center; color: var(--secondary-color); margin-bottom: 2rem;">Send Us a Message</h2>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="order">Order Issue</option>
+                                <option value="delivery">Delivery Problem</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="complaint">Complaint</option>
+                                <option value="suggestion">Suggestion</option>
+                                <option value="partnership">Business Partnership</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="orderNumber">Order Number (if applicable)</label>
+                            <input type="text" id="orderNumber" name="orderNumber" placeholder="e.g., TB-12345">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Please provide details about your inquiry..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" name="newsletter" style="margin-right: 0.5rem;">
+                                Subscribe to our newsletter for special offers and updates
+                            </label>
+                        </div>
+                        
+                        <div style="text-align: center;">
+                            <button type="submit" class="btn" style="font-size: 1.2rem; padding: 1rem 3rem;">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section">
+            <div class="section-content">
+                <h2>Frequently Asked Questions</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>❓ How long does delivery take?</h3>
+                            <p>Our standard delivery time is 25-35 minutes. During peak hours (lunch and dinner), it may take up to 45 minutes. We'll provide you with real-time tracking once your order is confirmed.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>💳 What payment methods do you accept?</h3>
+                            <p>We accept cash on delivery, all major credit/debit cards, PayPal, Apple Pay, Google Pay, and major food delivery app payments. Payment is secure and encrypted.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>🚚 What is your delivery area?</h3>
+                            <p>We deliver within a 15-mile radius of our main restaurant. Delivery fee varies from $2.99-$4.99 based on distance. Free delivery on orders over $35!</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>🔄 Can I modify or cancel my order?</h3>
+                            <p>Yes! You can modify or cancel your order within 5 minutes of placing it. After that, please call us immediately at (555) 123-FOOD and we'll try our best to accommodate your request.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>🌿 Do you have vegetarian/vegan options?</h3>
+                            <p>Absolutely! We have a wide selection of vegetarian and vegan dishes. Look for the 🌱 symbol on our menu. We also accommodate special dietary requirements.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>🛡️ Food Safety & Quality</h3>
+                            <p>Food safety is our top priority. All our ingredients are fresh, locally sourced when possible, and our kitchen follows strict hygiene standards. We're certified by the local health department.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Operating Hours Section -->
+        <section class="section" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
+            <div class="section-content">
+                <h2 style="color: white; text-align: center;">Operating Hours</h2>
+                <div class="cards-grid" style="margin-top: 2rem;">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Restaurant Dining</h3>
+                            <p><strong>Monday - Thursday:</strong><br>11:00 AM - 10:00 PM</p>
+                            <p><strong>Friday - Sunday:</strong><br>11:00 AM - 11:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Delivery Service</h3>
+                            <p><strong>Monday - Thursday:</strong><br>11:00 AM - 11:00 PM</p>
+                            <p><strong>Friday - Sunday:</strong><br>11:00 AM - 12:00 AM</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Customer Support</h3>
+                            <p><strong>Daily:</strong><br>9:00 AM - 12:00 AM</p>
+                            <p><strong>Emergency Line:</strong><br>Available 24/7</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TastyBites</h3>
+                <p>Delivering happiness, one meal at a time. Fresh ingredients, expert preparation, lightning-fast delivery.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="menu.html">Our Menu</a>
+                <a href="order.html">Place Order</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="login.html">Login</a>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="contact.html">Help & Support</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📞 (555) 123-FOOD</p>
+                <p>📧 info@tastybites.com</p>
+                <p>📍 123 Foodie Street, Flavor Town</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TastyBites. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="rtl-toggle.js"></script>
+</body>
+</html>

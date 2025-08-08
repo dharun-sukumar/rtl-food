@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - TastyBites</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="navbar-brand">🍕 TastyBites</a>
+            
+            <ul class="nav-links">
+                <li class="dropdown" data-page="home">
+                    <a href="#" class="dropbtn">Home</a>
+                    <div class="dropdown-content">
+                        <a href="index.html">Home Style 1</a>
+                        <a href="index2.html">Home Style 2</a>
+                    </div>
+                </li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="dropdown" data-page="dashboard">
+                    <a href="#" class="dropbtn">Dashboard</a>
+                    <div class="dropdown-content">
+                        <a href="user-dashboard.html">User Dashboard</a>
+                        <a href="admin-dashboard.html">Admin Dashboard</a>
+                    </div>
+                </li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+            
+            <button class="mobile-menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Welcome Section -->
+        <section class="hero" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); padding: 2rem;">
+            <div class="hero-content">
+                <h1>Welcome Back, <span id="userName">Food Lover</span>!</h1>
+                <p>Manage your orders, track deliveries, and discover new favorites from your personal dashboard.</p>
+            </div>
+        </section>
+
+        <!-- Dashboard Overview -->
+        <section class="section">
+            <div class="section-content">
+                <div class="dashboard">
+                    <div class="dashboard-card">
+                        <h3>Total Orders</h3>
+                        <div class="number">47</div>
+                        <p>Lifetime orders placed</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3>Loyalty Points</h3>
+                        <div class="number">1,285</div>
+                        <p>Points earned</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3>Money Saved</h3>
+                        <div class="number">$127</div>
+                        <p>Through promotions</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3>Favorite Cuisine</h3>
+                        <div class="number">🍕</div>
+                        <p>Italian</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Current Orders -->
+        <section class="section" style="background-color: var(--accent-color);">
+            <div class="section-content">
+                <h2>Current Orders</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Order #TB-2025-001</h3>
+                            <p><strong>Status:</strong> <span style="color: var(--primary-color);">🚚 Out for Delivery</span></p>
+                            <p><strong>Items:</strong> Margherita Pizza, Caesar Salad</p>
+                            <p><strong>Total:</strong> $31.98</p>
+                            <p><strong>ETA:</strong> 15-20 minutes</p>
+                            <button class="btn" onclick="trackOrder('TB-2025-001')">Track Order</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Order #TB-2025-002</h3>
+                            <p><strong>Status:</strong> <span style="color: var(--secondary-color);">👨‍🍳 Being Prepared</span></p>
+                            <p><strong>Items:</strong> Beef Tenderloin, Tiramisu</p>
+                            <p><strong>Total:</strong> $42.98</p>
+                            <p><strong>ETA:</strong> 35-40 minutes</p>
+                            <button class="btn" onclick="trackOrder('TB-2025-002')">Track Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Order History -->
+        <section class="section">
+            <div class="section-content">
+                <h2>Recent Order History</h2>
+                <div style="background: white; border-radius: var(--border-radius); box-shadow: var(--shadow); overflow: hidden;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead style="background: var(--primary-color); color: white;">
+                            <tr>
+                                <th style="padding: 1rem; text-align: left;">Order ID</th>
+                                <th style="padding: 1rem; text-align: left;">Date</th>
+                                <th style="padding: 1rem; text-align: left;">Items</th>
+                                <th style="padding: 1rem; text-align: left;">Total</th>
+                                <th style="padding: 1rem; text-align: left;">Status</th>
+                                <th style="padding: 1rem; text-align: left;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 1rem;">#TB-2024-087</td>
+                                <td style="padding: 1rem;">Dec 28, 2024</td>
+                                <td style="padding: 1rem;">BBQ Ribs, Iced Coffee</td>
+                                <td style="padding: 1rem;">$29.98</td>
+                                <td style="padding: 1rem;"><span style="color: green;">✅ Delivered</span></td>
+                                <td style="padding: 1rem;"><button class="btn" onclick="reorder('TB-2024-087')">Reorder</button></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 1rem;">#TB-2024-086</td>
+                                <td style="padding: 1rem;">Dec 25, 2024</td>
+                                <td style="padding: 1rem;">Pasta Carbonara, Tiramisu</td>
+                                <td style="padding: 1rem;">$27.98</td>
+                                <td style="padding: 1rem;"><span style="color: green;">✅ Delivered</span></td>
+                                <td style="padding: 1rem;"><button class="btn" onclick="reorder('TB-2024-086')">Reorder</button></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 1rem;">#TB-2024-085</td>
+                                <td style="padding: 1rem;">Dec 22, 2024</td>
+                                <td style="padding: 1rem;">Grilled Salmon, Orange Juice</td>
+                                <td style="padding: 1rem;">$31.98</td>
+                                <td style="padding: 1rem;"><span style="color: green;">✅ Delivered</span></td>
+                                <td style="padding: 1rem;"><button class="btn" onclick="reorder('TB-2024-085')">Reorder</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button class="btn btn-secondary">View All Orders</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Favorite Items -->
+        <section class="section" style="background-color: var(--accent-color);">
+            <div class="section-content">
+                <h2>Your Favorite Items</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <img src="https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg" alt="Margherita Pizza">
+                        <div class="card-content">
+                            <h3>Margherita Pizza</h3>
+                            <p>Your #1 most ordered item</p>
+                            <div class="price">$18.99</div>
+                            <p style="font-size: 0.9rem; color: #666;">Ordered 12 times</p>
+                            <a href="order.html" class="btn">Order Again</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg" alt="BBQ Ribs">
+                        <div class="card-content">
+                            <h3>BBQ Ribs</h3>
+                            <p>Your weekend favorite</p>
+                            <div class="price">$24.99</div>
+                            <p style="font-size: 0.9rem; color: #666;">Ordered 8 times</p>
+                            <a href="order.html" class="btn">Order Again</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg" alt="Pasta Carbonara">
+                        <div class="card-content">
+                            <h3>Pasta Carbonara</h3>
+                            <p>Perfect for dinner</p>
+                            <div class="price">$19.99</div>
+                            <p style="font-size: 0.9rem; color: #666;">Ordered 6 times</p>
+                            <a href="order.html" class="btn">Order Again</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Account Management -->
+        <section class="section">
+            <div class="section-content">
+                <h2>Account Management</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>📋 Profile Information</h3>
+                            <p>Update your personal details, contact information, and preferences.</p>
+                            <button class="btn" onclick="editProfile()">Edit Profile</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>📍 Delivery Addresses</h3>
+                            <p>Manage your saved delivery addresses for faster ordering.</p>
+                            <button class="btn" onclick="manageAddresses()">Manage Addresses</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>💳 Payment Methods</h3>
+                            <p>Add, edit, or remove your saved payment methods and cards.</p>
+                            <button class="btn" onclick="managePayments()">Manage Payments</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>🔔 Notifications</h3>
+                            <p>Control your email, SMS, and push notification preferences.</p>
+                            <button class="btn" onclick="manageNotifications()">Notification Settings</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loyalty Program -->
+        <section class="section" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
+            <div class="section-content">
+                <h2 style="color: white; text-align: center;">TastyBites Loyalty Program</h2>
+                <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: var(--border-radius); margin-top: 2rem;">
+                    <div style="display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 2rem; align-items: center; color: white;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 3rem;">🏆</div>
+                            <h3>Gold Member</h3>
+                            <p>Your current status</p>
+                        </div>
+                        <div>
+                            <div style="background: rgba(255,255,255,0.2); height: 20px; border-radius: 10px; overflow: hidden; margin-bottom: 1rem;">
+                                <div style="background: white; height: 100%; width: 75%; border-radius: 10px;"></div>
+                            </div>
+                            <p style="text-align: center;">1,285 / 2,000 points to Platinum</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 3rem;">💎</div>
+                            <h3>715 Points</h3>
+                            <p>Away from Platinum</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button class="btn" style="background: white; color: var(--primary-color);">Redeem Points</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TastyBites</h3>
+                <p>Delivering happiness, one meal at a time. Fresh ingredients, expert preparation, lightning-fast delivery.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="menu.html">Our Menu</a>
+                <a href="order.html">Place Order</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="login.html">Login</a>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="contact.html">Help & Support</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📞 (555) 123-FOOD</p>
+                <p>📧 info@tastybites.com</p>
+                <p>📍 123 Foodie Street, Flavor Town</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TastyBites. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize user dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            const userEmail = sessionStorage.getItem('userEmail');
+            if (!userEmail) {
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            // Extract name from email for display
+            const userName = userEmail.split('@')[0].charAt(0).toUpperCase() + userEmail.split('@')[0].slice(1);
+            document.getElementById('userName').textContent = userName;
+        });
+
+        // Dashboard functions
+        function trackOrder(orderId) {
+            alert(`Tracking order ${orderId}...\n\nStatus: Out for Delivery\nDriver: Mike Johnson\nPhone: (555) 987-6543\n\nYour order will arrive in approximately 15-20 minutes.`);
+        }
+
+        function reorder(orderId) {
+            if (confirm(`Reorder the items from ${orderId}?`)) {
+                window.location.href = 'order.html';
+            }
+        }
+
+        function editProfile() {
+            alert('Profile editing functionality would open here. This would allow users to update their personal information, dietary preferences, and account settings.');
+        }
+
+        function manageAddresses() {
+            alert('Address management functionality would open here. Users can add, edit, or delete their saved delivery addresses.');
+        }
+
+        function managePayments() {
+            alert('Payment management functionality would open here. Users can manage their credit cards, PayPal accounts, and other payment methods.');
+        }
+
+        function manageNotifications() {
+            alert('Notification settings would open here. Users can control email, SMS, and push notification preferences.');
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to log out?')) {
+                sessionStorage.clear();
+                window.location.href = 'login.html';
+            }
+        }
+
+        // Simulate real-time order updates
+        function simulateOrderUpdates() {
+            setInterval(() => {
+                // This would normally connect to a WebSocket or polling system
+                // For demo purposes, we'll just show occasional updates
+                if (Math.random() > 0.98) {
+                    showNotification('Order update: Your delivery is 2 minutes away!', 'info');
+                }
+            }, 5000);
+        }
+
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: ${type === 'success' ? '#4CAF50' : '#2196F3'};
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 8px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+                z-index: 10000;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 4000);
+        }
+
+        // Start simulation
+        simulateOrderUpdates();
+    </script>
+    <script src="main.js"></script>
+    <script src="rtl-toggle.js"></script>
+</body>
+</html>

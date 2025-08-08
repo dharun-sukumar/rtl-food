@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - TastyBites</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="navbar-brand">🍕 TastyBites</a>
+            
+            <ul class="nav-links">
+                <li class="dropdown" data-page="home">
+                    <a href="#" class="dropbtn">Home</a>
+                    <div class="dropdown-content">
+                        <a href="index.html">Home Style 1</a>
+                        <a href="index2.html">Home Style 2</a>
+                    </div>
+                </li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="dropdown" data-page="dashboard">
+                    <a href="#" class="dropbtn">Dashboard</a>
+                    <div class="dropdown-content">
+                        <a href="user-dashboard.html">User Dashboard</a>
+                        <a href="admin-dashboard.html">Admin Dashboard</a>
+                    </div>
+                </li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+            
+            <button class="mobile-menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Error Section -->
+        <section class="error-container">
+            <div class="error-code">404</div>
+            <h1 class="error-message">Oops! This Page is Off the Menu</h1>
+            <p style="font-size: 1.2rem; margin-bottom: 3rem; color: var(--text-dark); max-width: 600px; margin-left: auto; margin-right: auto;">
+                It looks like this page has been eaten! The page you're looking for doesn't exist or may have been moved to our kitchen for improvements.
+            </p>
+
+            <div style="margin-bottom: 3rem;">
+                <a href="index.html" class="btn" style="margin-right: 1rem; font-size: 1.1rem;">🏠 Back to Home</a>
+                <a href="menu.html" class="btn btn-secondary" style="font-size: 1.1rem;">🍽️ View Menu</a>
+            </div>
+
+            <!-- Helpful Links -->
+            <div style="background: var(--accent-color); padding: 3rem; border-radius: var(--border-radius); max-width: 800px; margin: 3rem auto;">
+                <h2 style="color: var(--secondary-color); margin-bottom: 2rem;">Maybe you were looking for...</h2>
+                <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🍕</div>
+                        <h3>Our Menu</h3>
+                        <p>Explore our delicious dishes</p>
+                        <a href="menu.html" class="btn">View Menu</a>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📋</div>
+                        <h3>Place Order</h3>
+                        <p>Order your favorite meal now</p>
+                        <a href="order.html" class="btn">Order Now</a>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📞</div>
+                        <h3>Contact Us</h3>
+                        <p>Get help or ask questions</p>
+                        <a href="contact.html" class="btn">Contact Support</a>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">👤</div>
+                        <h3>Your Account</h3>
+                        <p>Login to track orders</p>
+                        <a href="login.html" class="btn">Login</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search -->
+            <div style="margin-top: 3rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+                <h3 style="color: var(--secondary-color); margin-bottom: 1rem;">Search Our Site</h3>
+                <div style="display: flex; gap: 1rem;">
+                    <input type="text" id="searchInput" placeholder="Search for dishes, pages, or information..." style="flex: 1; padding: 1rem; border: 2px solid var(--primary-color); border-radius: var(--border-radius); font-size: 1rem;">
+                    <button onclick="performSearch()" class="btn" style="padding: 1rem 2rem;">Search</button>
+                </div>
+            </div>
+
+            <!-- Fun Error Messages -->
+            <div style="margin-top: 4rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <div id="funMessage" style="background: white; padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow); text-align: center;">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">🎭 Fun Fact</h3>
+                    <p id="randomMessage" style="font-style: italic; color: var(--text-dark);">
+                        Our chefs are so good, even our 404 errors are delicious!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Promotions -->
+        <section class="section" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
+            <div class="section-content">
+                <h2 style="color: white; text-align: center;">While You're Here, Check These Out!</h2>
+                <div class="cards-grid" style="margin-top: 2rem;">
+                    <div class="card">
+                        <img src="https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg" alt="Special Pizza">
+                        <div class="card-content">
+                            <h3>🔥 Today's Special</h3>
+                            <p>Margherita Pizza with extra cheese</p>
+                            <div class="price">$16.99 <span style="text-decoration: line-through; color: #999;">$18.99</span></div>
+                            <a href="order.html" class="btn">Order Now</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg" alt="Combo Deal">
+                        <div class="card-content">
+                            <h3>💰 Combo Deal</h3>
+                            <p>Any Burger + Fries + Drink</p>
+                            <div class="price">$19.99 <span style="text-decoration: line-through; color: #999;">$24.99</span></div>
+                            <a href="order.html" class="btn">Order Now</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg" alt="Weekend Special">
+                        <div class="card-content">
+                            <h3>🎉 Weekend Special</h3>
+                            <p>Free dessert with any pasta order</p>
+                            <div class="price">From $14.99</div>
+                            <a href="menu.html" class="btn">View Pasta Menu</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TastyBites</h3>
+                <p>Even when you're lost, we're here to help you find your way back to great food!</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="menu.html">Our Menu</a>
+                <a href="order.html">Place Order</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="login.html">Login</a>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="contact.html">Help & Support</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📞 (555) 123-FOOD</p>
+                <p>📧 info@tastybites.com</p>
+                <p>📍 123 Foodie Street, Flavor Town</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TastyBites. All rights reserved. | Even our 404s are made with love! 💝</p>
+        </div>
+    </footer>
+
+    <script>
+        // Fun random messages for 404 page
+        const funMessages = [
+            "Our chefs are so good, even our 404 errors are delicious! 👨‍🍳",
+            "This page went out for delivery and never came back! 🚚",
+            "Looks like this page is still in the oven... 🔥",
+            "Our delivery driver took a wrong turn with this page! 🗺️",
+            "This page is temporarily closed for renovations! 🔨",
+            "Someone ordered this page to-go! 📦",
+            "This page is on a lunch break! 🍽️",
+            "Oops! This page fell off the menu! 📋",
+            "This page is being prepared by our slowest chef! ⏰",
+            "Even our errors are farm-to-table fresh! 🌱"
+        ];
+
+        // Display random fun message
+        function displayRandomMessage() {
+            const randomIndex = Math.floor(Math.random() * funMessages.length);
+            document.getElementById('randomMessage').textContent = funMessages[randomIndex];
+        }
+
+        // Search functionality
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+            
+            if (!searchTerm) {
+                alert('Please enter something to search for!');
+                return;
+            }
+
+            // Simple search logic - redirect to appropriate pages
+            const searchMappings = {
+                'menu': 'menu.html',
+                'order': 'order.html',
+                'contact': 'contact.html',
+                'login': 'login.html',
+                'dashboard': 'user-dashboard.html',
+                'admin': 'admin-dashboard.html',
+                'home': 'index.html',
+                'pizza': 'menu.html#pizza',
+                'burger': 'menu.html#burger',
+                'pasta': 'menu.html#pasta',
+                'dessert': 'menu.html#dessert',
+                'drinks': 'menu.html#drinks',
+                'help': 'contact.html',
+                'support': 'contact.html',
+                'account': 'login.html'
+            };
+
+            // Check if search term matches any mappings
+            for (let key in searchMappings) {
+                if (searchTerm.includes(key)) {
+                    window.location.href = searchMappings[key];
+                    return;
+                }
+            }
+
+            // If no direct match, show suggestion
+            alert(`No exact match found for "${searchTerm}". Try searching for: menu, order, contact, login, pizza, burger, pasta, or help.`);
+        }
+
+        // Allow Enter key to search
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        // Initialize random message on page load
+        displayRandomMessage();
+
+        // Change message every 5 seconds for fun
+        setInterval(displayRandomMessage, 5000);
+
+        // Add some interactive animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const errorCode = document.querySelector('.error-code');
+            
+            // Animate error code on hover
+            errorCode.addEventListener('mouseenter', function() {
+                this.style.transform = 'rotate(-5deg) scale(1.05)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            errorCode.addEventListener('mouseleave', function() {
+                this.style.transform = 'rotate(0deg) scale(1)';
+            });
+
+            // Add floating animation to fun message
+            const funMessage = document.getElementById('funMessage');
+            let floatDirection = 1;
+            
+            setInterval(() => {
+                const currentTransform = funMessage.style.transform || 'translateY(0px)';
+                const currentY = parseInt(currentTransform.match(/translateY\((-?\d+)px\)/) || [0, 0])[1];
+                const newY = currentY + (floatDirection * 2);
+                
+                if (Math.abs(newY) > 10) {
+                    floatDirection *= -1;
+                }
+                
+                funMessage.style.transform = `translateY(${newY}px)`;
+                funMessage.style.transition = 'transform 0.5s ease-in-out';
+            }, 500);
+        });
+    </script>
+    <script src="main.js"></script>
+    <script src="rtl-toggle.js"></script>
+</body>
+</html>

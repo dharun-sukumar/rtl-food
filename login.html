@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - TastyBites</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="navbar-brand">🍕 TastyBites</a>
+            
+            <ul class="nav-links">
+                <li class="dropdown" data-page="home">
+                    <a href="#" class="dropbtn">Home</a>
+                    <div class="dropdown-content">
+                        <a href="index.html">Home Style 1</a>
+                        <a href="index2.html">Home Style 2</a>
+                    </div>
+                </li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="dropdown" data-page="dashboard">
+                    <a href="#" class="dropbtn">Dashboard</a>
+                    <div class="dropdown-content">
+                        <a href="user-dashboard.html">User Dashboard</a>
+                        <a href="admin-dashboard.html">Admin Dashboard</a>
+                    </div>
+                </li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+            
+            <button class="mobile-menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero" style="background: linear-gradient(135deg, rgba(255, 107, 53, 0.9) 0%, rgba(139, 69, 19, 0.9) 100%), url('https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg') center/cover; padding: 2rem;">
+            <div class="hero-content">
+                <h1>Welcome Back</h1>
+                <p>Sign in to your account to track orders, save favorites, and enjoy personalized dining experiences.</p>
+            </div>
+        </section>
+
+        <!-- Login Forms Section -->
+        <section class="section">
+            <div class="section-content">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 1000px; margin: 0 auto;">
+                    
+                    <!-- Login Form -->
+                    <div class="form-container">
+                        <h2 style="text-align: center; color: var(--secondary-color); margin-bottom: 2rem;">Sign In</h2>
+                        
+                        <form id="loginForm">
+                            <div class="form-group">
+                                <label for="loginEmail">Email Address *</label>
+                                <input type="email" id="loginEmail" name="loginEmail" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="loginPassword">Password *</label>
+                                <input type="password" id="loginPassword" name="loginPassword" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" name="rememberMe" style="margin-right: 0.5rem;">
+                                    Remember me
+                                </label>
+                            </div>
+                            
+                            <div style="text-align: center; margin-bottom: 1rem;">
+                                <button type="submit" class="btn" style="width: 100%; font-size: 1.1rem;">Sign In</button>
+                            </div>
+                            
+                            <div style="text-align: center;">
+                                <a href="#forgot" style="color: var(--primary-color); text-decoration: none;">Forgot your password?</a>
+                            </div>
+                        </form>
+
+                        <!-- Social Login -->
+                        <div style="margin-top: 2rem; text-align: center;">
+                            <p style="margin-bottom: 1rem; color: var(--text-dark);">Or sign in with:</p>
+                            <div style="display: flex; gap: 1rem; justify-content: center;">
+                                <button class="btn btn-secondary" style="flex: 1;">📘 Facebook</button>
+                                <button class="btn btn-secondary" style="flex: 1;">🔍 Google</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sign Up Form -->
+                    <div class="form-container">
+                        <h2 style="text-align: center; color: var(--secondary-color); margin-bottom: 2rem;">Create Account</h2>
+                        
+                        <form id="signupForm">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="signupEmail">Email Address *</label>
+                                <input type="email" id="signupEmail" name="signupEmail" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phoneNumber">Phone Number *</label>
+                                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="signupPassword">Password *</label>
+                                <input type="password" id="signupPassword" name="signupPassword" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm Password *</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" name="terms" required style="margin-right: 0.5rem;">
+                                    I agree to the <a href="#terms" style="color: var(--primary-color);">Terms of Service</a> and <a href="#privacy" style="color: var(--primary-color);">Privacy Policy</a>
+                                </label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" name="newsletter" style="margin-right: 0.5rem;">
+                                    Subscribe to our newsletter for special offers
+                                </label>
+                            </div>
+                            
+                            <div style="text-align: center;">
+                                <button type="submit" class="btn" style="width: 100%; font-size: 1.1rem;">Create Account</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="section" style="background-color: var(--accent-color);">
+            <div class="section-content">
+                <h2>Why Create an Account?</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>🚚 Order Tracking</h3>
+                            <p>Real-time tracking of your orders from preparation to delivery. Get notifications at every step of the process.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>❤️ Save Favorites</h3>
+                            <p>Save your favorite dishes and reorder with just one click. Create custom meal combinations for quick ordering.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>🏆 Loyalty Rewards</h3>
+                            <p>Earn points with every order and redeem them for free meals, discounts, and exclusive menu items.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>📍 Saved Addresses</h3>
+                            <p>Store multiple delivery addresses for home, work, and other locations. Make ordering even faster and easier.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>🎉 Exclusive Offers</h3>
+                            <p>Get access to member-only promotions, early access to new menu items, and personalized discount codes.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>📊 Order History</h3>
+                            <p>View your complete order history, reorder previous meals, and track your spending and preferences.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guest Checkout -->
+        <section class="section">
+            <div class="section-content">
+                <div style="text-align: center; background: white; padding: 3rem; border-radius: var(--border-radius); box-shadow: var(--shadow); max-width: 600px; margin: 0 auto;">
+                    <h2 style="color: var(--secondary-color); margin-bottom: 1rem;">Don't want to create an account?</h2>
+                    <p style="margin-bottom: 2rem; color: var(--text-dark);">No problem! You can still place orders as a guest. You'll just miss out on the awesome benefits above.</p>
+                    <a href="order.html" class="btn" style="font-size: 1.1rem; padding: 1rem 2rem;">Continue as Guest</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TastyBites</h3>
+                <p>Delivering happiness, one meal at a time. Fresh ingredients, expert preparation, lightning-fast delivery.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="menu.html">Our Menu</a>
+                <a href="order.html">Place Order</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="login.html">Login</a>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="contact.html">Help & Support</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📞 (555) 123-FOOD</p>
+                <p>📧 info@tastybites.com</p>
+                <p>📍 123 Foodie Street, Flavor Town</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TastyBites. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced login functionality
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            // Simulate login process
+            if (email && password) {
+                // Check if admin credentials
+                if (email === 'admin@tastybites.com') {
+                    sessionStorage.setItem('userType', 'admin');
+                    sessionStorage.setItem('userEmail', email);
+                    window.location.href = 'admin-dashboard.html';
+                } else {
+                    sessionStorage.setItem('userType', 'user');
+                    sessionStorage.setItem('userEmail', email);
+                    window.location.href = 'user-dashboard.html';
+                }
+            }
+        });
+
+        // Enhanced signup functionality
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const password = document.getElementById('signupPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const email = document.getElementById('signupEmail').value;
+            
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+            
+            if (password.length < 6) {
+                alert('Password must be at least 6 characters long!');
+                return;
+            }
+            
+            // Simulate account creation
+            sessionStorage.setItem('userType', 'user');
+            sessionStorage.setItem('userEmail', email);
+            
+            alert('Account created successfully! Welcome to TastyBites!');
+            window.location.href = 'user-dashboard.html';
+        });
+
+        // Password strength indicator
+        document.getElementById('signupPassword').addEventListener('input', function(e) {
+            const password = e.target.value;
+            let strength = 0;
+            
+            if (password.length >= 6) strength++;
+            if (password.match(/[a-z]/)) strength++;
+            if (password.match(/[A-Z]/)) strength++;
+            if (password.match(/[0-9]/)) strength++;
+            if (password.match(/[^A-Za-z0-9]/)) strength++;
+            
+            let strengthText = '';
+            let color = '';
+            
+            switch(strength) {
+                case 0:
+                case 1: strengthText = 'Weak'; color = '#FF4444'; break;
+                case 2:
+                case 3: strengthText = 'Medium'; color = '#FFB347'; break;
+                case 4:
+                case 5: strengthText = 'Strong'; color = '#4CAF50'; break;
+            }
+            
+            let indicator = document.getElementById('password-strength');
+            if (!indicator) {
+                indicator = document.createElement('div');
+                indicator.id = 'password-strength';
+                indicator.style.fontSize = '0.9rem';
+                indicator.style.marginTop = '0.5rem';
+                e.target.parentNode.appendChild(indicator);
+            }
+            
+            indicator.textContent = password ? `Password strength: ${strengthText}` : '';
+            indicator.style.color = color;
+        });
+    </script>
+    <script src="main.js"></script>
+    <script src="rtl-toggle.js"></script>
+</body>
+</html>

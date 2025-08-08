@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - TastyBites</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="navbar-brand">🍕 TastyBites</a>
+            
+            <ul class="nav-links">
+                <li class="dropdown" data-page="home">
+                    <a href="#" class="dropbtn">Home</a>
+                    <div class="dropdown-content">
+                        <a href="index.html">Home Style 1</a>
+                        <a href="index2.html">Home Style 2</a>
+                    </div>
+                </li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="dropdown" data-page="dashboard">
+                    <a href="#" class="dropbtn">Dashboard</a>
+                    <div class="dropdown-content">
+                        <a href="user-dashboard.html">User Dashboard</a>
+                        <a href="admin-dashboard.html">Admin Dashboard</a>
+                    </div>
+                </li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+            
+            <button class="mobile-menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero" style="background: linear-gradient(135deg, rgba(255, 107, 53, 0.9) 0%, rgba(139, 69, 19, 0.9) 100%), url('https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg') center/cover; padding: 2rem;">
+            <div class="hero-content">
+                <h1>Our Delicious Menu</h1>
+                <p>Explore our carefully crafted selection of mouth-watering dishes, prepared with the finest ingredients by our expert chefs.</p>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section class="section">
+            <div class="section-content">
+                <!-- Search Bar -->
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <input type="text" class="search-input" placeholder="Search for dishes..." style="padding: 1rem; border: 2px solid var(--primary-color); border-radius: 25px; width: 100%; max-width: 400px; font-size: 1rem;">
+                </div>
+
+                <!-- Appetizers -->
+                <div class="menu-category">
+                    <h3>🥗 Appetizers</h3>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Caesar Salad</h4>
+                            <p>Fresh romaine lettuce with parmesan cheese, croutons, and our signature Caesar dressing</p>
+                        </div>
+                        <div class="menu-item-price">$12.99</div>
+                        <a href="order.html" class="btn">Add to Order</a>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Buffalo Wings</h4>
+                            <p>Crispy chicken wings tossed in spicy buffalo sauce, served with celery sticks and blue cheese dip</p>
+                        </div>
+                        <div class="menu-item-price">$14.99</div>
+                        <a href="order.html" class="btn">Add to Order</a>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Bruschetta Trio</h4>
+                            <p>Three varieties of toasted bread topped with fresh tomatoes, mozzarella, and basil</p>
+                        </div>
+                        <div class="menu-item-price">$11.99</div>
+                        <a href="order.html" class="btn">Add to Order</a>
+                    </div>
+                </div>
+
+                <!-- Main Courses -->
+                <div class="menu-category">
+                    <h3>🍝 Main Courses</h3>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Margherita Pizza</h4>
+                            <p>Classic Italian pizza with fresh mozzarella, basil, and tomato sauce on wood-fired crust</p>
+                        </div>
+                        <div class="menu-item-price">$18.99</div>
+                        <a href="order.html" class="btn">Add to Order</a>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Grilled Salmon</h4>
+                            <p>Atlantic salmon grilled to perfection, served with lemon butter sauce and seasonal vegetables</p>
+                        </div>
+                        <div class="menu-item-price">$26.99</div>
+                        <a href="order.html" class="btn">Add to Order</a>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Beef Tenderloin</h4>
+                            <p>Premium beef tenderloin with mushroom sauce, mashed potatoes, and grilled asparagus</p>
+                        </div>
+                        <div class="menu-item-price">$34.99</div>
+                        <a href="order.html" class="btn">Add to Order</a>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Pasta Carbonara</h4>
+                            <p>Creamy pasta with pancetta, parmesan cheese, and a perfectly poached egg</p>
+                        </div>
+                        <div class="menu-item-price">$19.99</div>
+                        <a href="order.html" class="btn">Add to Order</a>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>BBQ Ribs</h4>
+                            <p>Slow-cooked pork ribs with our signature BBQ sauce, served with coleslaw and fries</p>
+                        </div>
+                        <div class="menu-item-price">$24.99</div>
+                        <a href="order.html" class="btn">Add to Order</a>
+                    </div>
+                </div>
+
+                <!-- Burgers & Sandwiches -->
+                <div class="menu-category">
+                    <h3>🍔 Burgers & Sandwiches</h3>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Classic Cheeseburger</h4>
+                            <p>Juicy beef patty with cheese, lettuce, tomato, onion, and pickles on brioche bun</p>
+                        </div>
+                        <div class="menu-item-price">$16.99</div>
+                        <a href="order.html" class="btn">Add to Order</a>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Chicken Club Sandwich</h4>
+                            <p>Grilled chicken breast with bacon, avocado, lettuce, and tomato on sourdough bread</p>
+                        </div>
+                        <div class="menu-item-price">$15.99</div>
+                        <a href="order.html" class="btn">Add to Order</a>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Veggie Burger</h4>
+                            <p>Plant-based patty with avocado, sprouts, tomato, and vegan mayo on whole grain bun</p>
+                        </div>
+                        <div class="menu-item-price">$14.99</div>
+                        <a href="order.html" class="btn">Add to Order</a>
+                    </div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-category">
+                    <h3>🍰 Desserts</h3>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Chocolate Lava Cake</h4>
+                            <p>Warm chocolate cake with molten center, served with vanilla ice cream</p>
+                        </div>
+                        <div class="menu-item-price">$8.99</div>
+                        <a href="order.html" class="btn">Add to Order</a>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Tiramisu</h4>
+                            <p>Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream</p>
+                        </div>
+                        <div class="menu-item-price">$7.99</div>
+                        <a href="order.html" class="btn">Add to Order</a>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>New York Cheesecake</h4>
+                            <p>Rich and creamy cheesecake with graham cracker crust and berry compote</p>
+                        </div>
+                        <div class="menu-item-price">$6.99</div>
+                        <a href="order.html" class="btn">Add to Order</a>
+                    </div>
+                </div>
+
+                <!-- Beverages -->
+                <div class="menu-category">
+                    <h3>🥤 Beverages</h3>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Fresh Orange Juice</h4>
+                            <p>Freshly squeezed orange juice, served chilled</p>
+                        </div>
+                        <div class="menu-item-price">$4.99</div>
+                        <a href="order.html" class="btn">Add to Order</a>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Craft Soda</h4>
+                            <p>Artisanal sodas in various flavors - Cola, Ginger Beer, or Lemonade</p>
+                        </div>
+                        <div class="menu-item-price">$3.99</div>
+                        <a href="order.html" class="btn">Add to Order</a>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Iced Coffee</h4>
+                            <p>Cold brew coffee served over ice with your choice of milk</p>
+                        </div>
+                        <div class="menu-item-price">$4.99</div>
+                        <a href="order.html" class="btn">Add to Order</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TastyBites</h3>
+                <p>Delivering happiness, one meal at a time. Fresh ingredients, expert preparation, lightning-fast delivery.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="menu.html">Our Menu</a>
+                <a href="order.html">Place Order</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="login.html">Login</a>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="contact.html">Help & Support</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📞 (555) 123-FOOD</p>
+                <p>📧 info@tastybites.com</p>
+                <p>📍 123 Foodie Street, Flavor Town</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TastyBites. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="rtl-toggle.js"></script>
+</body>
+</html>
