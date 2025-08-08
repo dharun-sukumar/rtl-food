@@ -299,14 +299,12 @@
         // Initialize user dashboard
         document.addEventListener('DOMContentLoaded', function() {
             const userEmail = sessionStorage.getItem('userEmail');
-            if (!userEmail) {
-                window.location.href = 'login.html';
-                return;
+            // Redirect to login removed as requested
+            // Extract name from email for display (if available)
+            if (userEmail) {
+                const userName = userEmail.split('@')[0].charAt(0).toUpperCase() + userEmail.split('@')[0].slice(1);
+                document.getElementById('userName').textContent = userName;
             }
-            
-            // Extract name from email for display
-            const userName = userEmail.split('@')[0].charAt(0).toUpperCase() + userEmail.split('@')[0].slice(1);
-            document.getElementById('userName').textContent = userName;
         });
 
         // Dashboard functions

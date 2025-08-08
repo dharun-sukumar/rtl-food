@@ -304,12 +304,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const userEmail = sessionStorage.getItem('userEmail');
             const userType = sessionStorage.getItem('userType');
-            
-            if (!userEmail || userType !== 'admin') {
-                window.location.href = 'login.html';
-                return;
-            }
-            
+            // Redirect to login removed as requested
             // Start real-time updates
             startRealTimeUpdates();
         });
