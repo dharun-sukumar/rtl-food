@@ -489,6 +489,12 @@ body {
         padding: 1rem;
         box-shadow: var(--shadow);
     }
+
+    .login-res {
+        display: flex !important;
+        flex-direction: column;
+        padding: 0 8px;
+    }
     
     .nav-links.active {
         display: flex;
@@ -1145,7 +1151,7 @@ body {
     }
     
     .section h2 {
-        font-size: 2rem;
+        /* font-size: 2rem; */
     }
     
     .cards-grid {
