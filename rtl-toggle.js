@@ -52,6 +52,21 @@ class RTLToggle {
         this.updateToggleButton();
         this.savePreference();
         this.showDirectionChange();
+        this.closeNavbarMenu(); // Close the menu after toggling
+    }
+    // Close the menu in navbar if open
+    closeNavbarMenu() {
+        // Common patterns: nav-links or navbar with 'open' or 'active' class
+        const navMenus = document.querySelectorAll('.nav-links.open, .nav-links.active, .navbar.open, .navbar.active');
+        navMenus.forEach(menu => {
+            menu.classList.remove('open', 'active');
+        });
+
+        // If you use a hamburger menu or similar, close it as well
+        const hamburger = document.querySelector('.hamburger.active');
+        if (hamburger) {
+            hamburger.classList.remove('active');
+        }
     }
 
     setDirection() {

@@ -23,10 +23,10 @@ class RestaurantApp {
             mobileToggle.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
                 
-                // Animate hamburger menu
-                const icon = mobileToggle.querySelector('i') || mobileToggle;
-                icon.style.transform = navLinks.classList.contains('active') 
-                    ? 'rotate(90deg)' : 'rotate(0deg)';
+                // // Animate hamburger menu
+                // const icon = mobileToggle.querySelector('i') || mobileToggle;
+                // icon.style.transform = navLinks.classList.contains('active') 
+                //     ? 'rotate(90deg)' : 'rotate(0deg)';
             });
 
             // Close menu when clicking on links
