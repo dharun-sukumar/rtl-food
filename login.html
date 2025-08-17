@@ -124,13 +124,13 @@
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;" id="name-fields">
                             <div>
                                 <label style="display: block; color: #2c3e50; font-weight: 600; margin-bottom: 0.5rem;">
-                                    <i class="fas fa-user" style="margin-right: 0.5rem; color: #FF6B35;"></i>First Name
+                                    <i class="fas fa-user" style="margin-right: 0.5rem; margin-left: 0.5rem; color: #FF6B35;"></i>First Name *
                                 </label>
                                 <input type="text" id="firstName" required style="width: 100%; padding: 1rem; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 1rem; transition: all 0.3s ease; background: rgba(255,255,255,0.9); box-sizing: border-box;" onfocus="this.style.borderColor='#FF6B35'; this.style.boxShadow='0 0 0 3px rgba(255,107,53,0.1)'" onblur="this.style.borderColor='#e0e0e0'; this.style.boxShadow='none'">
                             </div>
                             <div>
                                 <label style="display: block; color: #2c3e50; font-weight: 600; margin-bottom: 0.5rem;">
-                                    <i class="fas fa-user" style="margin-right: 0.5rem; color: #FF6B35;"></i>Last Name
+                                    <i class="fas fa-user" style="margin-right: 0.5rem; margin-left: 0.5rem; color: #FF6B35;"></i>Last Name *
                                 </label>
                                 <input type="text" id="lastName" required style="width: 100%; padding: 1rem; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 1rem; transition: all 0.3s ease; background: rgba(255,255,255,0.9); box-sizing: border-box;" onfocus="this.style.borderColor='#FF6B35'; this.style.boxShadow='0 0 0 3px rgba(255,107,53,0.1)'" onblur="this.style.borderColor='#e0e0e0'; this.style.boxShadow='none'">
                             </div>
@@ -138,21 +138,21 @@
                         
                         <div style="margin-bottom: 1.5rem;">
                             <label style="display: block; color: #2c3e50; font-weight: 600; margin-bottom: 0.5rem;">
-                                <i class="fas fa-envelope" style="margin-right: 0.5rem; color: #FF6B35;"></i>Email Address
+                                <i class="fas fa-envelope" style="margin-right: 0.5rem; margin-left: 0.5rem; color: #FF6B35;"></i>Email Address *
                             </label>
                             <input type="email" id="signupEmail" required style="width: 100%; padding: 1rem; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 1rem; transition: all 0.3s ease; background: rgba(255,255,255,0.9); box-sizing: border-box;" onfocus="this.style.borderColor='#FF6B35'; this.style.boxShadow='0 0 0 3px rgba(255,107,53,0.1)'" onblur="this.style.borderColor='#e0e0e0'; this.style.boxShadow='none'">
                         </div>
                         
                         <div style="margin-bottom: 1.5rem;">
                             <label style="display: block; color: #2c3e50; font-weight: 600; margin-bottom: 0.5rem;">
-                                <i class="fas fa-phone" style="margin-right: 0.5rem; color: #FF6B35;"></i>Phone Number
+                                <i class="fas fa-phone" style="margin-right: 0.5rem; margin-left: 0.5rem; color: #FF6B35;"></i>Phone Number *
                             </label>
                             <input type="tel" id="phoneNumber" required style="width: 100%; padding: 1rem; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 1rem; transition: all 0.3s ease; background: rgba(255,255,255,0.9); box-sizing: border-box;" onfocus="this.style.borderColor='#FF6B35'; this.style.boxShadow='0 0 0 3px rgba(255,107,53,0.1)'" onblur="this.style.borderColor='#e0e0e0'; this.style.boxShadow='none'">
                         </div>
                         
                         <div style="margin-bottom: 1.5rem;">
                             <label style="display: block; color: #2c3e50; font-weight: 600; margin-bottom: 0.5rem;">
-                                <i class="fas fa-lock" style="margin-right: 0.5rem; color: #FF6B35;"></i>Password
+                                <i class="fas fa-lock" style="margin-right: 0.5rem; margin-left: 0.5rem; color: #FF6B35;"></i>Password *
                             </label>
                             <div style="position: relative;">
                                 <input type="password" id="signupPassword" required style="width: 100%; padding: 1rem; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 1rem; transition: all 0.3s ease; background: rgba(255,255,255,0.9); box-sizing: border-box;" onfocus="this.style.borderColor='#FF6B35'; this.style.boxShadow='0 0 0 3px rgba(255,107,53,0.1)'" onblur="this.style.borderColor='#e0e0e0'; this.style.boxShadow='none'" oninput="checkPasswordStrength(this.value)">
@@ -165,7 +165,7 @@
                         
                         <div style="margin-bottom: 1.5rem;">
                             <label style="display: block; color: #2c3e50; font-weight: 600; margin-bottom: 0.5rem;">
-                                <i class="fas fa-lock" style="margin-right: 0.5rem; color: #FF6B35;"></i>Confirm Password
+                                <i class="fas fa-lock" style="margin-right: 0.5rem; margin-left: 0.5rem; color: #FF6B35;"></i>Confirm Password *
                             </label>
                             <div style="position: relative;">
                                 <input type="password" id="confirmPassword" required style="width: 100%; padding: 1rem; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 1rem; transition: all 0.3s ease; background: rgba(255,255,255,0.9); box-sizing: border-box;" onfocus="this.style.borderColor='#FF6B35'; this.style.boxShadow='0 0 0 3px rgba(255,107,53,0.1)'" onblur="this.style.borderColor='#e0e0e0'; this.style.boxShadow='none'">
@@ -176,14 +176,14 @@
                         </div>
                         
                         <div style="margin-bottom: 1.5rem;">
-                            <label style="display: flex; align-items: flex-start; cursor: pointer; line-height: 1.5;">
+                            <label style="display: flex; align-items: flex-start; cursor: pointer; line-height: 1.5; gap: 1rem;">
                                 <input type="checkbox" required style="margin-right: 0.75rem; margin-top: 0.25rem; transform: scale(1.2);">
                                 <span style="color: #2c3e50; font-size: 0.95rem;">I agree to the <a href="#" style="color: #FF6B35; text-decoration: none; font-weight: 600;">Terms of Service</a> and <a href="#" style="color: #FF6B35; text-decoration: none; font-weight: 600;">Privacy Policy</a></span>
                             </label>
                         </div>
                         
                         <div style="margin-bottom: 2rem;">
-                            <label style="display: flex; align-items: center; cursor: pointer;">
+                            <label style="display: flex; align-items: center; cursor: pointer; gap: 1rem;">
                                 <input type="checkbox" style="margin-right: 0.75rem; transform: scale(1.2);">
                                 <span style="color: #2c3e50; font-size: 0.95rem;">Subscribe to our newsletter for special offers</span>
                             </label>
